@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liked videos</title>
+</head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+<div style="position: sticky;  top: 0;
+  width: 100%; z-index:1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">ClipBucket</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">login/signup</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Browse
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/categories">Categories</a>
+                        <a class="dropdown-item" href="/streamers">Streamers</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/liked">Liked Videos</a>
+                        <a class="dropdown-item" href="/history">History</a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/upload">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/account">Account</a>
+                </li>
+                <li>
+                    <a href="/account"><img src="https://qualiscare.com/wp-content/uploads/2017/08/default-user.png"
+                                            class="img-fluid" alt="Responsive image" height="40" width="40"></a>
+
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/search" method="GET">
+                <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search"
+                       aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<div class="row">
+    <h5 style="margin-left:20px;margin-top: 5px;">Liked videos </h5>
+    <ul class="nav-item dropdown" style="margin-top: -3px; margin-left: auto; margin-right: 76px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+           data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+            Sort by
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/categories">views</a>
+            <a class="dropdown-item" href="/streamers">date uploaded</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="liked.html">recent</a>
+        </div>
+    </ul>
+</div>
+</div>
+<main role="main" class="container">
+    {% for i in historyclips %}
+    <div class="container-fluid mt-3 mb-3">
+        <a href="/clip/{{i.id}}">
+        <div class="card">
+            <div class="media align-middle mt-3 mb-3">
+                <img class="rounded align-middle img-responsive" src="{{i.thumbnailurl.replace('{width}','420').replace('{height}','220')}}"
+                     alt="Responsive image" width="420" height="220"/>
+                <div class="card-body">
+                    <h5 class="card-title">{{i.title}}</h5>
+                    <h6 class="card-subtitle text-muted">{{i.creatordisplayname}}</h6>
+                    <p class="card-text">Views: {{i.viewcount}}</p>
+                </div>
+            </div>
+        </div>
+            <a/>
+    </div>
+    {% endfor %}
+</main>
+
+</body>
+</html>

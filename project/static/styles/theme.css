@@ -1,0 +1,274 @@
+/*Flatter teal theme*/
+* {
+    font-family:sans;
+}
+.entry {
+    /*Sizing*/
+    box-sizing: content-box;
+    min-width:5em;
+    padding:0.5em;
+    min-height:1em;
+    height:1em;
+    
+    /*Colours & Border*/
+    border-radius:3px;
+    border:1px solid rgba(192,192,192,1);
+    color:rgba(96,96,96,1);
+    background-color:#FFF;
+    box-shadow:0px -1px 0px 0px rgba(245,245,245,1) inset;
+    
+    transition:all 100ms ease-out;
+}
+
+.entry:disabled, .entry:disabled:hover, .entry:disabled:active, .entry:disabled:focus,
+.entry.disabled, .entry.disabled:hover, .entry.disabled:active, .entry.disabled:focus {
+    color:rgba(192,192,192,1);
+    background-color:rgba(250,250,250,1);
+    border-color:rgba(210,210,210,1);
+    cursor:default;
+    box-shadow:none;
+}
+
+.entry:focus {
+    border-color: rgba(75,54,124,1);
+    color:#000;
+    background-color:#FFF;
+    box-shadow:none;
+    
+    transition:all 0ms linear; /*Instant transition IN*/
+}
+.entry:hover {
+    color:#000;
+    background-color:#FFF;
+    box-shadow:none;
+    
+    transition:all 0ms linear; /*Instant transition IN*/
+}
+
+#content > * > .button,
+#content > * > .entry {
+    /*Bigger buttons for main parts of the website*/
+    padding:1em;
+}
+
+#content > * > .entry_overlay {
+    margin: 0 -1em !important;
+}
+
+.button {
+    /*Sizing*/
+    box-sizing: content-box;
+    min-width:5em;
+    padding:0.5em;
+    min-height:1em;
+    height:1em;
+    
+    cursor:pointer;
+    
+    /*Colours & Border*/
+    text-decoration:none;
+    border-radius:3px;
+    border:1px solid rgba(192,192,192,1);
+    color:rgba(96,96,96,1);
+    background-color:rgba(250,250,250,1);
+    outline:0;
+    
+    box-shadow:0px 1px 0px 0px rgba(255,255,255,0.35) inset;
+    
+    /*Layout*/
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    transition:all 100ms ease-out;
+    
+}
+.button::-moz-focus-inner {
+    border:0;
+}
+
+/*BUTTON STATIC STATES*/
+
+.button:disabled, .button:disabled:hover, .button:disabled:active, .button:disabled:focus,
+.button.disabled, .button.disabled:hover, .button.disabled:active, .button.disabled:focus {
+    color:rgba(192,192,192,1);
+    background-color:#FFF;
+    border-color:rgba(192,192,192,1);
+    cursor:default;
+}
+
+.button.destructive {
+    color:rgba(250,0,16,0.7);
+}
+
+.button.destructive:hover {
+    color:rgba(250,0,16,1);
+}
+
+.button.destructive:focus {
+    border-color:rgba(250,0,16,1);
+    color:rgba(250,0,16,1);
+}
+
+.button.destructive:focus {
+    border-color:rgba(250,0,16,1);
+    color:rgba(250,0,16,1);
+}
+
+.button.destructive:active {
+    background-color:rgba(250,0,16,1);
+    color:#FFF;
+}
+
+.button.suggested, .button.suggested:hover:not(:active) {
+    color:rgba(75,54,124,0.7);
+}
+
+.button.suggested:hover:not(:active) {
+    color:rgba(75,54,124,1);
+}
+
+/*BUTTON MOUSE STATES*/
+
+.button:focus {
+    /*teal border*/
+    border-color: rgba(75,54,124,1);
+    transition:all 0ms linear;/*Instant transition IN*/
+}
+
+.button:hover {
+    /*Brighten it*/
+    background-color:rgba(255,255,255,1);
+    color:rgba(16,16,16,1);
+    transition:all 0ms linear;/*Instant transition IN*/
+}
+
+.button:active {
+    background-color:rgba(75,54,124,1);
+    transition:all 0ms linear;/*Instant transition IN*/
+    color:rgba(255,255,255,1);
+    border-color: rgba(56,45,80,1);
+}
+.linked_vert *:not(:first-child) {
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+}
+.linked_vert *:not(:last-child) {
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    border-bottom-style:none;
+}
+.linked_vert .button:not(:disabled):not(.disabled):active + .button,
+.linked_vert .button:not(:disabled):not(.disabled):focus + .button,
+.linked_vert .entry:not(:disabled):not(.disabled):focus + .button,
+.linked_vert .button:not(:disabled):not(.disabled):active + .entry,
+.linked_vert .button:not(:disabled):not(.disabled):focus + .entry,
+.linked_vert .entry:not(:disabled):not(.disabled):focus + .entry {
+    border-top-color: rgba(75,54,124,1);
+}
+
+.linked_horz *:not(:first-child) {
+    border-bottom-left-radius:0px;
+    border-top-left-radius:0px;
+}
+.linked_horz *:not(:last-child) {
+    border-bottom-right-radius:0px;
+    border-top-right-radius:0px;
+    border-right-style:none;
+}
+.linked_horz .button:not(:disabled):not(.disabled):active + .button,
+.linked_horz .button:not(:disabled):not(.disabled):focus + .button,
+.linked_horz .entry:not(:disabled):not(.disabled):focus + .button,
+.linked_horz .button:not(:disabled):not(.disabled):active + .entry,
+.linked_horz .button:not(:disabled):not(.disabled):focus + .entry,
+.linked_horz .entry:not(:disabled):not(.disabled):focus + .entry {
+    border-left-color: rgba(75,54,124,1);
+}
+
+.entry_overlay {
+    /*Maintains a 0 width*/
+    cursor:pointer;
+    opacity:0.8;
+    position:relative;
+    right:1.5em;
+    margin:0 -0.5em;
+    padding:calc(0.5em + 2px) 0;
+    transition:opacity 100ms ease-out;
+}
+.entry_overlay:hover {
+    opacity:1;
+    transition:opacity 0ms linear;
+}
+
+.entry.overlayed {
+    padding-right:3em;
+}
+
+.list > * {
+    padding:1em;
+    border:1px solid rgba(192,192,192,1);
+    background-color:#FFF;
+    color:rgba(96,96,96,1);
+    transition:all 100ms ease-out;
+}
+.list > a {
+    text-decoration:none;
+}
+.list > *:hover {
+    background-color:rgba(250,250,250,1);
+    color:#000;
+    transition:all 0ms linear; /*Instant transition IN*/
+}
+.list > *:not(:last-child) {
+    border-bottom-style:none;
+}
+.list > *.selected, .list > *:hover.selected{
+    background-color:rgba(75,54,124,1);
+    color:#FFF;
+}
+
+.list.scrolling {
+    border:1px solid rgba(192,192,192,1);
+    border-style:solid none solid none;
+}
+.list.scrolling > *:first-child {
+    border-top-style:none; 
+}
+
+.list.scrolling > *:last-child {
+    border-bottom-style:none;
+}
+/*Small text*/
+.info {
+    font-size:12px;
+}
+
+#topbar {
+    background-color:rgba(245,245,245,1);
+    border-bottom:rgba(192,192,192,1) 1px solid;
+}
+#topbar a:not(.button) {
+    color:#FFF;
+    text-decoration:none;
+}
+
+#sidebar {
+    border-right: 1px solid rgba(192,192,192,1);
+}
+
+
+.tile {
+    border-radius:3px;
+    border:1px solid rgba(192,192,192,1);
+    background-color:rgba(250,250,250,1);
+    color:rgba(96,96,96,1);
+    outline:0;
+}
+.tile:hover {
+    background-color:#FFF;
+    color:rgba(16,16,16,1);
+    transition:all 0ms linear;/*Instant transition IN*/
+}
+.tile:active {
+
+}

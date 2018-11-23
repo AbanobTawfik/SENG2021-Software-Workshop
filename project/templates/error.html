@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .content_center {
+            max-width: 60%;
+        }
+
+        .entry, .content_center .button {
+            max-width: 18em;
+            min-width: 18em;
+        }
+    </style>
+</head>
+
+<body class="text-center">
+<div style="position: sticky;  top: 0;
+  width: 100%; z-index:1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">ClipBucket</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">login/signup</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Browse
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/categories">Categories</a>
+                        <a class="dropdown-item" href="/streamers">Streamers</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/liked">Liked Videos</a>
+                        <a class="dropdown-item" href="/history">History</a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/upload">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/account">Account</a>
+                </li>
+                <li>
+                    <a href="/account"><img src="https://qualiscare.com/wp-content/uploads/2017/08/default-user.png"
+                                            class="img-fluid" alt="Responsive image" height="40" width="40"></a>
+
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/search" method="GET">
+                <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search"
+                       aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<form class="form-signin" action="" method="POST">
+    <img class="mb-4" src="\clipbucket-app\static\images\Home.png" alt="" width="100" height="100">
+    <div style="text-align:center;width:300px; margin:auto;">
+        <h1 class="h3 mb-3 font-weight-normal">{{ title }}</h1>
+        {{ body }}
+    </div>
+</form>
+</body>
+</html>
